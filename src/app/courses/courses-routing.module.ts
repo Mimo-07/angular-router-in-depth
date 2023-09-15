@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CourseComponent } from './course/course.component';
 import { coursesResolver } from './services/course.resolver';
+import { DelayResolver } from '../shared/delay.resolve';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
     path:":courseurl",
     component: CourseComponent,
     resolve: {
-      course: coursesResolver
+      course: coursesResolver,
+      delay: DelayResolver
     }
   }
 ];

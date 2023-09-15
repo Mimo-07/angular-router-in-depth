@@ -3,6 +3,7 @@ import {Routes, RouterModule, PreloadAllModules, UrlSerializer} from '@angular/r
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DelayResolver } from './shared/delay.resolve';
 
 
 const routes: Routes = [
@@ -15,15 +16,18 @@ const routes: Routes = [
   },
   {
     path:"about",
-    component: AboutComponent 
+    component: AboutComponent,
+    resolve: [DelayResolver]
   },
   {
     path:"login",
-    component: LoginComponent
+    component: LoginComponent,
+    resolve: [DelayResolver]
   },
   {
     path:"**",
-    component:PageNotFoundComponent
+    component:PageNotFoundComponent,
+    resolve: [DelayResolver]
   }
 ];
 
