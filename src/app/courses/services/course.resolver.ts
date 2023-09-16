@@ -1,7 +1,6 @@
 import { ActivatedRouteSnapshot, Resolve, ResolveFn, RouterStateSnapshot } from "@angular/router";
 import { Course } from "../model/course";
-import { Injectable, inject } from "@angular/core";
-import { Observable } from "rxjs";
+import { inject } from "@angular/core";
 import { CoursesService } from "./courses.service";
 
 export const coursesResolver: ResolveFn<Course> =

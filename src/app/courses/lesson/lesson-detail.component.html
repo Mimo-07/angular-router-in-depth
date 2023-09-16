@@ -1,8 +1,9 @@
 
 
-<a class="back" href="javascript:void(0)">Back To Course</a>
+<a class="back" [routerLink]="['../../']" href="javascript:void(0)">Back To Course</a>
+<!-- Current url = http://localhost:4200/courses/angular-router-course/lessons/1 -->
 
-<div class="lesson-detail" *ngIf="(lesson$ | async) as lesson">
+<div class="lesson-detail" >
 
     <h3>{{lesson.description}}</h3>
 
