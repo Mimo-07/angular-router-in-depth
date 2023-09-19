@@ -3,7 +3,7 @@
 <a class="back" [routerLink]="['../../']" href="javascript:void(0)">Back To Course</a>
 <!-- Current url = http://localhost:4200/courses/angular-router-course/lessons/1 -->
 
-<div class="lesson-detail" >
+<div class="lesson-detail" *ngIf="(lesson$ | async) as lesson">
 
     <h3>{{lesson.description}}</h3>
 
@@ -11,7 +11,7 @@
 
   <div class="video-container">
 
-    <mat-icon class="nav-button" *ngIf="!lesson.first">
+    <mat-icon class="nav-button" *ngIf="!lesson.first" (click)="Previous(lesson)">
       navigate_before
     </mat-icon>
 
@@ -20,7 +20,7 @@
 
     </iframe>
 
-    <mat-icon class="nav-button" *ngIf="!lesson.last">
+    <mat-icon class="nav-button" *ngIf="!lesson.last" (click)="Next(lesson)">
       navigate_next
     </mat-icon>
 
